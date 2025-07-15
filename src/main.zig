@@ -419,6 +419,13 @@ pub const StreamingParser = struct {
                 0x09, 0x0A, 0x0D, 0x20 => {
                     // whitespace
                 },
+                '{' => {
+                    p.stack.push(.object) orelse return error.TooManyNestedItems;
+                    p.state = .ValueBegin;
+                    p.after_string_state = .ObjectSeparator;
+
+                    token.* = Token.ObjectBegin;
+                },
                 else => {
                     return error.InvalidTopLevelTrailing;
                 },

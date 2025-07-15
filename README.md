@@ -1,4 +1,6 @@
-# [zig-json5](https://github.com/Himujjal/zig-json5)
+# Fork of [zig-json5](https://github.com/Himujjal/zig-json5) with support for multiple top level statements
+
+Updated to zig 0.14
 
 A [JSON5](https://json5.org) parser/stringifier for Zig that resembles the `std.json` API from the standard library
 
